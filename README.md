@@ -13,6 +13,6 @@ Miss those subtle shadows with non-linear decay in Photoshop? You can mimic them
 
 # Changelog
 | Version | Date | Updates |
-|:--|-:-|:--|
+|:--|:--|:--|
 | V0.2 | Aug 28, 2018 | · Added shadow color support<br>· Added  shadow opacity support |
 | V0.1 | Aug 28, 2018 | · Initial MVP version |
