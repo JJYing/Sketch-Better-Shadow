@@ -14,7 +14,7 @@
             </ul>
           ]]>
       </description>
-      <enclosure url="" sparkle:version="0.1"/>
+      <enclosure url="https://github.com/JJYing/Sketch-Better-Shadow/raw/master/Releases/Better-Shadow.0.1.zip" sparkle:version="0.1"/>
     </item>
   </channel>
 </rss>
