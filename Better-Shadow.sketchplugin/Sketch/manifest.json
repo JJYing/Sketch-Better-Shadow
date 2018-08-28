@@ -1,0 +1,33 @@
+{
+	"author": "JJ Ying",
+	"identifier" : "com.jjying.sketch.better-shadow",
+	"version" : "0.1",
+	"description" : "Quickly Generate Multi-layered Shadow to Mimic Non-linear Decay",
+	"authorEmail" : "yingjunjiu@gmail.com",
+	"homepage": "https://github.com/JJYing/Sketch-Better-Shadow",
+	"appcast": "https://raw.githubusercontent.com/JJYing/Sketch-Better-Shadow/master/appcast.xml",
+	"name" : "Better Shadow",
+	"compatibleVersion": 50,
+	"bundleVersion": 1,
+	"icon": "icons/bicon.png",
+	"commands" : [
+		{
+			"script" : "script.cocoascript",
+			"name" : "Better Shadow",
+			"shortcut": "ctrl option b",
+			"handlers" : {
+				"run" : "onRun"
+			},
+			"identifier" : "better-shadow-generate"
+		}
+
+	],
+	"menu": {
+		"title" : "Better Shadow",
+		"isRoot" : true,
+		"items": [
+		  "better-shadow-generate"
+		]
+
+	}
+}

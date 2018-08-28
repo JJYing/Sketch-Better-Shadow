@@ -1,0 +1,71 @@
+var onRun = function(context) {
+
+	var doc = context.document
+  var selectedLayers = context.selection
+  var selectedCount = selectedLayers.count()
+
+  // Notify users to select at least 1 shape
+  if (selectedCount == 0) {
+		doc.showMessage("Please select at least one shape")
+  }
+	else {
+		@import "dialog.js"
+	}
+
+	// Init
+	var blurIteration = settings.blurIteration
+	var blurRadius = settings.blurRadius
+	var blurOffsetX = settings.blurOffsetX
+	var blurOffsetY = settings.blurOffsetY
+	var blurSpread = settings.blurSpread
+	var blurOpacity = settings.blurOpacity
+
+  // Process shadows
+  for (var i = 0; i < selectedCount; i++) {
+
+    var layer = selectedLayers[i]
+
+		// layer.name = "123123"
+		// var testValue = layer.style().fills().firstObject().color().immutableModelObject()//.hexValue().toString()
+
+		for (var j = 0; j < blurIteration; j++) {
+			var newShadow = layer.style().addStylePartOfType(2)
+			newShadow.spread = blurSpread
+			newShadow.offsetX = ( blurIteration - j ) / blurIteration * blurOffsetX
+			// newShadow.Color = hexToColor('c0ffee')
+			newShadow.offsetY = ( blurIteration - j ) / blurIteration * blurOffsetY
+			newShadow.blurRadius = Math.pow(( blurIteration - j ) / blurIteration, 0.2) * blurRadius
+
+			//计算当前阴影在两个插值点之间透明度的降低程度
+			d = decayDist((blurIteration - j - 1)/blurIteration) - decayDist((blurIteration - j) / blurIteration)
+			l = blurRadius / blurIteration
+
+			newOpacity = opacityProcess( (d / l * ( (blurIteration - j) / blurIteration * blurRadius ) * Math.pow(blurOpacity,1.1)), blurIteration )
+
+			newShadow.color = MSColor.colorWithRed_green_blue_alpha(0, 0, 0, newOpacity)
+
+
+		}
+
+  }
+}
+
+function decayDist(x) {
+	x = Math.pow(x - 1,2)
+	return x
+}
+
+function digitProcess(x) {
+	x = x.toFixed(2)
+	return x
+}
+
+function opacityProcess(x, i) {
+	// 层数多了之后适当降低透明度
+	x = Math.pow( -0.06 * i + 1.1, 1)  * x
+
+	if (x > 1) {
+		x = 1
+	}
+	return x.toFixed(2)
+}
