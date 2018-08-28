@@ -19,20 +19,19 @@ var onRun = function(context) {
 	var blurOffsetY = settings.blurOffsetY
 	var blurSpread = settings.blurSpread
 	var blurOpacity = settings.blurOpacity
+	var blurColor = settings.blurColor
 
   // Process shadows
   for (var i = 0; i < selectedCount; i++) {
 
     var layer = selectedLayers[i]
 
-		// layer.name = "123123"
 		// var testValue = layer.style().fills().firstObject().color().immutableModelObject()//.hexValue().toString()
 
 		for (var j = 0; j < blurIteration; j++) {
 			var newShadow = layer.style().addStylePartOfType(2)
 			newShadow.spread = blurSpread
 			newShadow.offsetX = ( blurIteration - j ) / blurIteration * blurOffsetX
-			// newShadow.Color = hexToColor('c0ffee')
 			newShadow.offsetY = ( blurIteration - j ) / blurIteration * blurOffsetY
 			newShadow.blurRadius = Math.pow(( blurIteration - j ) / blurIteration, 0.2) * blurRadius
 
@@ -42,8 +41,12 @@ var onRun = function(context) {
 
 			newOpacity = opacityProcess( (d / l * ( (blurIteration - j) / blurIteration * blurRadius ) * Math.pow(blurOpacity,1.1)), blurIteration )
 
-			newShadow.color = MSColor.colorWithRed_green_blue_alpha(0, 0, 0, newOpacity)
+			newColorR = parseInt( (blurColor.substr(0,2)), 16) / 255
+			newColorG = parseInt( (blurColor.substr(2,2)), 16) / 255
+			newColorB = parseInt( (blurColor.substr(4,2)), 16) / 255
+			log(blurOpacity)
 
+			newShadow.color = MSColor.colorWithRed_green_blue_alpha(newColorR, newColorG, newColorB, newOpacity)
 
 		}
 

@@ -13,7 +13,7 @@ var settings = {
 function createLabel(text, frame) {
   var label = [[NSTextField alloc] initWithFrame:frame];
   [label setStringValue:text];
-  [label setFont:[NSFont boldSystemFontOfSize:12]];
+  [label setFont:[NSFont systemFontOfSize:12]];
   [label setBezeled:false];
   [label setDrawsBackground:false];
   [label setEditable:false];
@@ -23,12 +23,10 @@ function createLabel(text, frame) {
 
 // Dialog
 function blurSettings(context) {
-  // Set initial block for our fields
   var viewBox = [[NSBox alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)];
   viewBox.title = "";
   viewBox.titleFont = [NSFont systemFontOfSize:1]
   viewBox.transparent = true
-
 
   [viewBox addSubview:createLabel("X Offset", NSMakeRect(0, 80, 60, 20))];
   var blurOffsetXInput = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 60, 60, 20)];
@@ -78,7 +76,8 @@ function blurSettings(context) {
   settings.blurOffsetY = Number(blurOffsetYInput.stringValue())
   settings.blurOffsetX = Number(blurOffsetXInput.stringValue())
   settings.blurIteration = Number(blurIterationInput.stringValue())
-  settings.blurColor = Number(blurColorInput.stringValue())
+  settings.blurOpacity = Number(blurOpacityInput.stringValue())
+  settings.blurColor = blurColorInput.stringValue()
   settings.blurSpread = Number(blurSpreadInput.stringValue())
 
   // Return values

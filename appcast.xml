@@ -6,7 +6,18 @@
     <description>Quickly Generate Multi-layered Shadow to Mimic Non-linear Decay</description>
     <language>en</language>
     <item>
-      <title>Version 0.1</title>
+      <title>V0.2</title>
+      <description>
+        <![CDATA[
+            <ul>
+              <li>Added shadow color support</li>
+            </ul>
+          ]]>
+      </description>
+      <enclosure url="https://github.com/JJYing/Sketch-Better-Shadow/raw/master/Releases/Better-Shadow.0.2.zip" sparkle:version="0.2"/>
+    </item>
+    <item>
+      <title>V0.1</title>
       <description>
         <![CDATA[
             <ul>

@@ -1,7 +1,7 @@
 {
 	"author": "JJ Ying",
 	"identifier" : "com.jjying.sketch.better-shadow",
-	"version" : "0.1",
+	"version" : "0.2",
 	"description" : "Quickly Generate Multi-layered Shadow to Mimic Non-linear Decay",
 	"authorEmail" : "yingjunjiu@gmail.com",
 	"homepage": "https://github.com/JJYing/Sketch-Better-Shadow",
