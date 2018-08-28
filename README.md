@@ -1,5 +1,7 @@
 # Better Shadow Plug-in for Sketch
-Miss those subtle shadows with non-linear decay in Photoshop? You can mimic them in CSS & Sketch now!
+Miss those subtle shadows with non-linear decay in Photoshop? You can mimic them in Sketch now!
+
+![](https://github.com/JJYing/Sketch-Better-Shadow/raw/master/Assets/preview.gif)
 
 # Installation
 1. Download and unzip the [**Plug-in package**](https://github.com/JJYing/Sketch-Better-Shadow/raw/master/Releases/Better-Shadow-Latest.zip).
@@ -10,7 +12,7 @@ Miss those subtle shadows with non-linear decay in Photoshop? You can mimic them
 2. Currently only accept 6-digit HEX color code, color pickers to be added.
 
 # Changelog
-| Date | Version | Updates |
-|:--|:--|:--|
-| Aug 28, 2018 | V0.2 | · Added shadow color support<br>· Added  shadow opacity support |
-| Aug 28, 2018 | V0.1 | · Initial MVP version |
+| Version | Date | Updates |
+|:--|-:-|:--|
+| V0.2 | Aug 28, 2018 | · Added shadow color support<br>· Added  shadow opacity support |
+| V0.1 | Aug 28, 2018 | · Initial MVP version |

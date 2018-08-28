@@ -11,6 +11,7 @@
         <![CDATA[
             <ul>
               <li>Added shadow color support</li>
+              <li>Added shadow opacity support</li>
             </ul>
           ]]>
       </description>

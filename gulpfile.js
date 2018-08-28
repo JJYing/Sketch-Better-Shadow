@@ -6,25 +6,19 @@ var cdnUrl = [
 ]
 
 gulp.task('temp', function() {
-
 	gulp.src('Better-Shadow.sketchplugin/**')
     .pipe(gulp.dest('temp/Better-Shadow.sketchplugin'))
-
 })
 
 gulp.task('zip', function() {
-
 	gulp.src('temp/**')
   	.pipe(plugins.zip('Better-Shadow-Latest.zip'))
     .pipe(gulp.dest('Releases'))
-
 })
 
 gulp.task('clean', function() {
-
 	return gulp.src('temp/**', {read: false})
     .pipe(plugins.clean());
-
 })
 
 gulp.task('default', plugins.sequence('temp', 'zip'))
